@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "景点";
+}
+<link href="~/Content/Swiper-3.4.2/dist/css/swiper.min.css" rel="stylesheet" />
+<style>
+    .swiper-container {
+        background: #eee;
+        width: 100%;
+        height: 13em;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        width: 80%;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    /* 正在被点击的链接 */
+    a.read_more_btn:hover {
+        color: #de686d;
+    }
+
+    div#tourist_content p {
+        text-indent: 2em;
+    }
+</style>
+<div>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="~/Content/images/wolongshan.jpg" style="width:100%;" />
+            </div>
+            <div class="swiper-slide">
+                <img src="~/Content/images/11-02-11_1420.jpg" style="width:100%;" />
+            </div>
+            <div class="swiper-slide">
+                <img src="~/Content/images/21-01-12_1410.jpg" style="width:100%;" />
+            </div>
+            <div class="swiper-slide">
+                <img src="~/Content/images/bixiagong.jpg" style="width:100%;" />
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+@*地图*@
+<div>
+
+</div>
+@*//介绍*@
+<div id="tourist_content" style="height:12em;overflow:hidden;">
+    <p style="text-indent:2em;">  卧龙山是经中国国家审批的2A级风景旅游区。</p>
+    <p>  卧龙山，山势自西向东，峰峦叠起，蜿蜒曲折，连绵不断。大自然的鬼斧神工，造就了龙头峰、龙脊峰、龙腹峰、龙乳峰、龙尾峰。五峰相连，酷似一条横空出世的巨龙在云影烟光中盘旋飞腾，因此叫卧龙山，森林覆盖率达80%，满山数千万株松柏，给山劈山了绿装。山中有好多怪石，裸露山中，形象各异。龙乳峰下的龙乳泉，是天然形成的奇泉，三尺见方，三尺水深。龙乳泉水“四不”奇特无比。</p>
+    <p>
+        卧龙山凭借大自然赐予的奇特风光依山就势，精心设计建筑了多处人文景观。整体建筑格调为：仿古建筑，砖、木、石结构。
+    </p>
+    <p>
+        山上有抗日烈士纪念碑，高九米，宽三米，汉白玉砌成。碑的四周生长着挺拔的苍松翠柏，碑座上摆放着谒碑人献给先烈的簇簇鲜花。碑身右侧旗杆上鲜艳的五星红旗迎风招展，碑顶的五角红星在为蓝的天空中闪闪发亮。碑身前面刻着“抗日先烈永垂不朽，下峪村民敬立，九九年九月”血红的大字。碑身后面，记述了这次战斗历程。
+        在卧龙山的最好地段，龙腹峰的龙心处建有乾坤圣殿（中华伟人馆）。乾坤圣殿（中华伟人馆），在中国是首家由农民自筹资金，自觉修建的纪念馆。
+    </p>
+    <p>
+        卧龙山重建和兴建了九座佛、道殿堂：①天王殿、②观音殿、③娘娘殿、④药王殿、⑤财神殿、⑥龙王殿、⑦地藏王、菩萨殿、⑧大雄宝殿、⑨万佛殿。每年农历二月初二和十月十五有两次传统庙会。
+    </p>
+</div>
+<div id="read_all_box" style="position: relative; z-index: 9999; padding: 0 0 2px; text-align: center; margin-top: -11em; ">
+    <div style="background: -webkit-gradient(linear,0 top,0 bottom,from(rgba(226, 91, 91, 0)),to(#fafafa)); background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(rgba(226, 91, 91, 0)), to(rgb(250, 250, 250))); background-position-x: initial; background-position-y: initial; background-size: initial; background-repeat-x: initial; background-repeat-y: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; width: 100%; height: 11em; ">
+    </div>
+    <div style="text-align: center; ">
+        <a class="read_more_btn"
+           style="display: block;text-decoration:none; width: 5em; height: 1.6em; padding: 0.3em 0.7em; border: 1px solid #de686d; margin: 1px auto; color: #de686d; border-radius: 4px; "
+           href="javascript:;">还没看够</a>
+    </div>
+</div>
+<!-- Swiper JS -->
+<script src="~/Content/Swiper-3.4.2/dist/js/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        spaceBetween: 5
+    });
+    var showMore = function () {
+        $("div#read_all_box").hide();
+        $("div#tourist_content").css("height", "auto");
+    };
+    $(document).ready(function () {
+        $("a.read_more_btn").bind('click', showMore);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+

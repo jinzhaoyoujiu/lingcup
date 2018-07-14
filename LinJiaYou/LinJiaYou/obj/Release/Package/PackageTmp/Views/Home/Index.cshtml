@@ -1,0 +1,219 @@
+﻿@{
+    ViewBag.Title = "首页";
+    int i = 0;
+}
+<div style="clear:both;"></div>
+<link href="~/Content/Swiper-3.4.2/dist/css/swiper.min.css" rel="stylesheet" />
+<style>
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 14px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    a.title_link {
+        display: inline-block;
+        padding-right: 1.46875rem;
+        position: relative;
+    }
+
+        a.title_link::after {
+            content: "";
+            border: .45625rem solid #000;
+            border-top-width: .425rem;
+            border-bottom-width: .425rem;
+            border-color: transparent transparent transparent #ff552e;
+            position: absolute;
+            top: .28438rem;
+            right: 0;
+        }
+    .essay-tag {
+        font-size: 0.9em;
+        margin-right: 0.1em;
+        border: 1px solid #ff552e;
+        color: #ff552e;
+        width: 3.5em;
+        display: block;
+        float: left;
+        text-align: center;
+    }
+</style>
+<!-- Swiper -->
+<div style="height: 10em; border-radius: 0.3em 0.5em; ">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="/home/touristInfo"><img src="~/Content/images/wolongshan.jpg" style="width:100%" /></a></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<div style="margin-top: 0.1em;">
+    <ul type="none" style="display: block;list-style:none; background-color: #fff; width: 100%; overflow: hidden; padding-bottom: .15625rem; padding-top: 1.71875rem;padding:0;margin:0;">
+        <li style=" box-sizing: border-box; width: 25%; float: left; list-style: none;margin:0;padding:0;">
+            <a href="/home/touristInfoList" style="color:black;">
+                <div style="text-align:center;">
+                    <div style=" width: 58%; margin: 0.2em auto; padding: 0.2em 0.2em; text-align: center; ">
+                        <img src="~/Content/images/tourist.png" style="width:100%;" />
+                    </div>
+                    <div style=" margin: 0 auto;  text-align: center; line-height: 1.6em;  "> 
+                        <span>景点</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li style=" box-sizing: border-box; width: 25%; float: left; list-style: none;">
+            <a href="/shops/index">
+                <div style="text-align:center;">
+                    <div style="width: 58%; margin: 0.2em auto; padding: 0.2em 0.2em; text-align: center; ">
+                        @*<img src="http://op61of9x2.bkt.clouddn.com/%E5%95%86%E5%BA%97%20%281%29.png" style="width:100%;" />*@
+                        <img src="http://op61of9x2.bkt.clouddn.com/%E5%95%86%E5%BA%97%20%283%29.png" style="width:100%;"/>
+                    </div>
+                    <div style=" margin: 0 auto;  text-align: center; line-height: 1.6em;  ">
+                        <span>商店</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li style=" box-sizing: border-box; width: 25%; float: left; list-style: none;">
+            <a href="/home/hotelList">
+                <div style="text-align:center;">
+                    <div style="width: 58%; margin: 0.2em auto; padding: 0.2em 0.2em; text-align: center; ">
+                        <img src="http://op61of9x2.bkt.clouddn.com/%E6%97%85%E5%BA%97.png" style="width:100%;" />
+                    </div>
+                    <div style=" margin: 0 auto;  text-align: center; line-height: 1.6em;  ">
+                        <span>旅店</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li style=" box-sizing: border-box; width: 25%; float: left; list-style: none;margin:0;padding:0;">
+            <a href="/essays/index">
+                <div style="text-align:center;">
+                    <div style="width: 58%; margin: 0.2em auto; padding: 0.2em 0.2em; text-align: center; ">
+                        <img src="http://op61of9x2.bkt.clouddn.com/%E5%A4%B4%E6%9D%A1.png" style="width:100%;" />
+                    </div>
+                    <div style=" margin: 0 auto;  text-align: center; line-height: 1.6em;  ">
+                        <span>头条</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<div style="width:99%;margin:0.1em 0.1em;">
+    @*<div style=" width: 90%; padding-left:0.7em; font-size: 116%; font-weight: bold; margin: 0.1em 0.1em; border-left: 3px solid #ff492d;">
+        <a href="/home/specialPriceList" class="title_link">超市特价</a>
+        <span>
+            <canvas id="moreC" width="15" height="15">更多</canvas>
+        </span>
+    </div>
+    <div style=" width: 92%; padding: 0.1em 0.1em; margin: 0.1em 1em; ">
+        <span>暂无特价商品</span>
+    </div>*@
+    @*<div>
+            <ul type="none" style="margin:0;padding:0;">
+                <li style="float: left; clear: both; width: 100%; ">
+                    <div style=" width: 92%; padding: 0.1em 0.1em; margin: 0.1em 1em; ">
+                        <span>伊利牛奶限时特价</span><span>--</span><span>和顺超市</span>
+                        <br />
+                        &nbsp;<span>截止日期：</span><span>2017-12-24 12:12:00</span>
+                        <p style="line-height: 1.4em; height: 2.8em; word-break: break-all; overflow: hidden; margin: 0;">产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍</p>
+                        <hr style="clear: both; margin-top: 0.5em; margin-bottom: 0.5em;" />
+                    </div>
+                </li>
+                <li>
+                    <div style="clear:both;"></div>
+                </li>
+            </ul>
+        </div>*@
+</div>
+@*<div style="width:99%;margin:0.1em 0.1em;">
+    <div style=" width: 90%; padding-left:0.7em; font-size: 116%; font-weight: bold; margin: 0.1em 0.1em; border-left: 3px solid #ff492d;">
+        <a class="title_link"><span>旅店特价</span></a>
+        <span>
+            <canvas id="moreC" width="15" height="15">更多</canvas>
+        </span>
+    </div>
+    <div style=" width: 92%; padding: 0.1em 0.1em; margin: 0.1em 1em; ">
+        <span>暂无特价房间</span>
+    </div>
+</div>*@
+<div style="width:99%;margin:0.5em 0.1em;">
+    <div style=" width: 90%; padding-left:0.7em; font-size: 116%; font-weight: bold; margin: 0.1em 0.1em; border-left: 3px solid #ff492d;">
+        <a class="title_link"><span>邻家头条</span></a>
+        <span>
+            <canvas id="moreC" width="15" height="15">更多</canvas>
+        </span>
+    </div>
+    @if (ViewBag.essays != null)
+    {
+
+        <div>
+            <ul type="none" style="margin:0;padding:0;">
+                @foreach (var item in (ViewBag.essays as List
+                <LinJiaYou.Models.Essay>
+                ))
+                    {
+                        i++;
+                        if (i > 1)
+                        {
+                            <li>
+                                <div style="clear:both;"></div>
+                            </li>
+
+                        }
+                            <li style="float: left; clear: both; width: 100%; ">
+                                <a href="/essays/Details?id=@item.ID">
+                                    <div style=" width: 92%; padding: 0.1em 0.1em; margin: 0.1em 1em; ">
+                                       <i class="essay-tag">推荐</i> <span>@item.Title</span>
+                                        @if (i > 1)
+        {
+                                <hr style="clear: both; margin-top: 0.5em; margin-bottom: 0.5em;" />
+
+}
+                                    </div>
+                                </a>
+                            </li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        <div style=" width: 92%; padding: 0.1em 0.1em; margin: 0.1em 1em; ">
+            <span>暂无头条信息</span>
+        </div>
+
+    }
+</div>
+<br />
+@section scripts{
+    <script src="~/Content/Swiper-3.4.2/dist/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+}

@@ -1,0 +1,55 @@
+﻿
+
+@model IEnumerable<SqlWebApplication.ServiceRefLingCup.Touristw>
+@{
+    ViewBag.Title = "景点";
+
+}
+<div style="width: 100%; height: 23em; margin-bottom: 1em; padding-bottom: 1em; margin-top: -1em;">
+    <ul style="list-style:none;">
+        @foreach (var m in Model)
+        {
+            <li>
+                <div style="float: left; width: 109%;margin-left:-2.4em;">
+                    <div style="float: left; width: 40%;  padding: 0.1em 0.2em;">
+                        @*<a href="/home/touristInfo"><img src="@m.firstPicUrl" style="width:100%;max-height:7em;" /></a>*@
+                    </div>
+                    <div style="float: left; width: 58%; ">
+                        <div>
+                            <span>@m.name</span>
+                        </div>
+                        <div>
+                            @*<p style="width: 96%; max-height: 7em; line-height: 1em; word-break: break-all; overflow: hidden;">
+                                @Html.Raw(m.intro)
+                            </p>*@
+                        </div>
+                    </div>
+                </div>
+                <div style="clear: both; margin-top: 1em; border: 0.1em solid white; width: 109%;  margin-left: -2.4em; ">
+                    <hr style="clear:both;" />
+                </div>
+            </li>
+        }
+        @*<li>
+                <div style="float: left; width: 109%;margin-left:-2.4em;">
+                    <div style="float: left; width: 40%;  padding: 0.1em 0.2em;">
+                        <a href="/home/touristInfo"><img src="~/Content/images/wolongshan.jpg" style="width:100%;max-height:7em;" /></a>
+                    </div>
+                    <div style="float: left; width: 58%; ">
+                        <div>
+                            <span>卧龙山自然风景区</span>
+                        </div>
+                        <div>
+                            <p style="width: 96%; max-height: 7em; line-height: 1em; word-break: break-all; overflow: hidden;">卧龙山自然风景区位于河北省遵化市娘娘庄乡，1998年开始规划动工。2000年对外开放。2004年投资350万元，完成了道路开拓、庙宇修建等工程。已经批准为国家2A级景区。</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear: both; margin-top: 1em; border: 0.1em solid white; width: 109%;  margin-left: -2.4em; ">
+                    <hr style="clear:both;" />
+                </div>
+            </li>*@
+    </ul>
+</div>
+<br />
+
+

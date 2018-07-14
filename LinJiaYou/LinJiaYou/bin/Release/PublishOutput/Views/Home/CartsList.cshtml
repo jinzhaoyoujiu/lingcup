@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "CartsList";
+}
+
+<h2>CartsList</h2>
+<ul>
+    <li><b>count</b><b>DateCreated</b></li>
+</ul>
+<ol type="A">
+    @foreach (System.Data.DataRow item in (ViewBag.dt as System.Data.DataTable).Rows)
+    {
+        <li>
+            @item["count"] &nbsp;
+            @item["DateCreated"]
+        </li>
+    }
+</ol>
+<table>
+    <tr><td><b>count</b></td><td><b>DateCreated</b></td></tr>
+    @foreach (System.Data.DataRow item in (ViewBag.dtPage as System.Data.DataTable).Rows)
+    {
+        <tr>
+            <td><a href="/Home/CartDetail?id=@item["RecordId"]">@item["count"]</a></td>
+            <td>@item["DateCreated"]</td>
+        </tr>
+    }
+</table>
+@{
+    DBHelper.Pager pager = new DBHelper.Pager();
+    pager = ViewBag.pager;
+}
+<ul>
+    <li>
+       <span>当前页：</span> @pager.page
+    </li>
+    <li>
+        <span>总页数：</span>@pager.pageCount
+    </li>
+    <li>
+        @if (pager.page > 1)
+{
+    <a href="?p=@(pager.page-1)">上一页</a>
+}
+else
+{
+            <span>上一页</span>
+        }
+        
+    </li>
+    <li>
+        @if (pager.page < pager.pageCount)
+{
+    <a href="?p=@(pager.page+1)">下一页</a>
+}
+else
+{
+            <span>下一页</span>
+        }
+    </li>
+</ul>

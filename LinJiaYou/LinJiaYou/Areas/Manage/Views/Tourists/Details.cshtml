@@ -1,0 +1,58 @@
+﻿@model LinJiaYou.Models.Tourist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tourist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstPicUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstPicUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Intro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Intro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_delete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_delete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TouristDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TouristDetail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PrimaryTrackingKeyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

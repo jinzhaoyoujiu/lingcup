@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<div  style="width: 100%; margin-bottom: 2px; height: 35px;">
+    <a href="/home/index"><span style="float:left; margin-top: 1em; margin-left: 0.8em;  padding: 0.1em 0.2em;">首页</span></a>
+    <span style="float:right; margin-top: 1em; margin-right: 0.8em;  padding: 0.1em 0.2em;"><a href="/my/Register">注册</a></span>
+</div>
+<div style="width: 100%;text-align:center;">
+    <link href='https://www.hanyi.studio/WebFonts/C3DB971E-443B-4D37-887D-530EE441EB6B/201712/css/AD34CF1E2BACC757.css' rel='stylesheet' type='text/css' />
+    <span style="font-size: 3em; color: #fff; background: #ff552e; color: #fff; border-radius: 37px 37px; " class="cssAD34CF1E2BACC757">邻家游</span>
+</div>
+<div style="text-align:center;">
+    <form action="/my/login" method="post" onsubmit="return CheckData();">
+        @Html.Hidden("a",(string)ViewBag.a)
+        <input type="text" id="name" name="name" value="@ViewBag.phone" placeholder="手机号" style="background-color: #F6F6F6; border: none; border-bottom: .5px solid #E6E6E6; width: 80%; height: 3em; " />
+        <br />
+        <input type="password" id="password" name="password" placeholder="请输入密码" style="background-color: #F6F6F6; border: none; border-bottom: .5px solid #E6E6E6; width: 80%; height: 3em; " />
+        <br />
+        <input type="submit" value="登录" style=" font-size: 16px; width: 80%; height: 2.75rem; line-height: 2.75rem; border: 0; padding: 0; background: #ff552e; color: #fff; border-radius: 2px;" />
+    </form>
+</div>
+@section scripts{
+<script>
+        $(document).ready(function(){
+            if('@ViewBag.phone'!= '') {
+                console.log('@ViewBag.phone');
+                document.getElementById('password').focus();
+            }
+        });
+        function CheckData()
+        {
+            var name = document.getElementById("name");
+            var password= document.getElementById("password");
+            if (name.value=="")
+            {
+                alert("请输入邮箱或手机号");
+                return false;
+            }
+            if (password.value == "") {
+                alert("请输入密码");
+                return false;
+            }
+            return true;
+        }
+
+</script>
+    }

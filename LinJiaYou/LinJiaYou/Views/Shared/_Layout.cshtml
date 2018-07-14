@@ -1,0 +1,131 @@
+﻿@{
+    string phone = "我的",myUrl="/My/login";
+    if (Session["veriPhone"] != null)
+    {
+        phone = Session["veriPhone"].ToString();
+        myUrl = "/My/index";
+    }
+    else
+    {
+        if (Request.Cookies.Count > 0)
+        {
+            if (Request.Cookies["loginPhone"] != null)
+            {
+                if (Request.Cookies["loginPhone"]["userName"] != null)
+                {
+                    phone = Request.Cookies["loginPhone"]["userName"];
+                    myUrl = "/My/index";
+                }
+            }
+        }
+    }
+
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-with,initial-scale=1.0" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>邻家游</title>
+    <meta content="邻家游,乡村分类信息" name="keywords">
+    <meta content="邻家游提供乡村旅游信息，包括景区、超市、旅店、头条，实时，准确，真实，实用。" name="description">
+    <meta name="baidu-site-verification" content="bKHIH8IOY8">
+    <meta name="sogou_site_verification" content="OpxGUyKqWC">
+    <meta name="360-site-verification" content="553e7ad90a0341d57360139f38e18923" />
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <style>
+        .logoText {
+            float: left;
+        }
+
+            .logoText span {
+                float: left;
+            }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+            a:visited {
+                color: none;
+            }
+    </style>
+    <script>
+
+        /*响应式布局 start*/
+        //function _set_font_size_750() {
+        //    //先留着这个方法，不要删，要给专题调用
+        //}
+        //function setRootFontSize() {
+        //    var width = document.documentElement.clientWidth, fontSize;
+        //    if (width > 540) {
+        //        width = 540;
+        //    }
+        //    fontSize = (width / 10);
+        //    document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px';
+        //    window.wapParams = {
+        //        rootFontSize: fontSize,
+        //        clientWidth: width
+        //    };
+        //}
+        //setRootFontSize();
+        //window.addEventListener('resize', function () {
+        //    setRootFontSize();
+        //}, false);
+        /*响应式布局 end*/
+
+    </script>
+</head>
+<body style="font-size: 14px; padding-bottom: 2em; max-width: 30em; margin: 0 auto 1em; ">
+    <div class="logoText" style="width: 100%;border: 1px solid;background: #ff552e;color: #fff;">
+        <link href='https://www.hanyi.studio/WebFonts/C3DB971E-443B-4D37-887D-530EE441EB6B/201712/css/AD34CF1E2BACC757.css' rel='stylesheet' type='text/css' />
+        <a href="/home/index"> <span style="font-size: 3em; color: #fff;" class="cssAD34CF1E2BACC757">邻家游</span></a>
+        <span style="margin-top: 1em; margin-left: 0.8em; /*border:0.2em solid #ffd800;*/ padding: 0.1em 0.2em;">遵化市娘娘庄乡下峪村</span>
+        <span style="margin-top: 1.2em; margin-left: 0.5em;display:none;">
+            <canvas id="moreC" width="15" height="15">更多</canvas>
+        </span>
+        <script>
+            var moreC = document.getElementById('moreC');
+            var moreCT = moreC.getContext('2d');
+            moreCT.moveTo(0, 0);
+            moreCT.lineTo(15, 0);
+            moreCT.lineTo(7.5, 12.9);
+            moreCT.fillStyle = "green";
+            moreCT.fill();
+        </script>
+        @*<span style="margin-top: 10px; margin-left: 6px;">
+                <canvas id="moreC" width="15" height="15">更多</canvas>
+            </span>*@
+        <span style="float:right; margin-top: 1em; margin-right: 0.8em;  padding: 0.1em 0.2em;"><a href="@myUrl">@phone</a></span>
+        @*@if(phone!="我的")
+        {
+        <span style="float:right; "><a href="/my/logOut">退出</a></span>
+        }*@
+    </div>
+    @RenderBody()
+    <footer class="footer" style="text-align: center;margin-top:2em;">
+        <address style="margin-bottom:0px;">
+            <strong>Email:</strong>  <a href="mailto:wangbaolongcom@163.com">wangbaolongcom@163.com</a><br />
+            <strong>QQ:</strong>  <span>552742161</span>
+            <strong>Moblie:</strong>  <span>15832578508</span><br />
+            @Html.ActionLink("后台管理","Index","Home",new { area = "Manage" },new { })
+            @*<span>意见反馈 洽谈合作 请联系站长</span>*@
+        </address>
+        <p><span>&copy; @DateTime.Now.Year 邻家游</span>&nbsp;<a href="http://www.miitbeian.gov.cn/">冀ICP备17029777号</a></p>
+    </footer>
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/underscore")*@
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

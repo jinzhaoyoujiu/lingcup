@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<LinJiaYou.Models.Tourist>
+@{
+    ViewBag.Title = "景点";
+}
+<div style="width: 100%; height: 23em; margin-bottom: 1em; padding-bottom: 1em; margin-top: -1em;">
+    <ul style="list-style:none;">
+        @foreach (var m in Model)
+        {
+            <li>
+                <div style="float: left; width: 109%;margin-left:-2.4em;">
+                    <div style="float: left; width: 40%;  padding: 0.1em 0.2em;">
+                        <a href="/home/touristInfo"><img src="@m.FirstPicUrl" style="width:100%;max-height:7em;" /></a>
+                    </div>
+                    <div style="float: left; width: 58%; ">
+                        <div>
+                            <span>@m.Name</span>
+                        </div>
+                        <div>
+                            <p style="width: 96%; max-height: 7em; line-height: 1em; word-break: break-all; overflow: hidden;">
+                                @Html.Raw(m.Intro)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear: both; margin-top: 1em; border: 0.1em solid white; width: 109%;  margin-left: -2.4em; ">
+                    <hr style="clear:both;" />
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+<br />

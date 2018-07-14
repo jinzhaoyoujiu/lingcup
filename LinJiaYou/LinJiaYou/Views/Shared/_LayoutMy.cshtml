@@ -1,0 +1,74 @@
+﻿@{
+    string phone = "我的";
+    if (Session["veriPhone"] != null)
+    {
+        phone = Session["veriPhone"].ToString();
+    }
+    else
+    {
+        if (Request.Cookies.Count > 0)
+        {
+            if (Request.Cookies["loginPhone"] != null)
+            {
+                if (Request.Cookies["loginPhone"]["userName"] != null)
+                {
+                    phone = Request.Cookies["loginPhone"]["userName"];
+                }
+            }
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-with,initial-scale=1.0" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>邻家游</title>
+    <meta content="邻家游,58同村,乡村分类信息" name="keywords">
+    <meta content="邻家游提供乡村分类信息，包括景区、超市、旅店、头条、二手、招聘、农收信息，实时，准确，真实，实用。" name="description">
+    <meta name="baidu-site-verification" content="bKHIH8IOY8">
+    <meta name="sogou_site_verification" content="OpxGUyKqWC">
+    <meta name="360-site-verification" content="553e7ad90a0341d57360139f38e18923" />
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <style>
+        .logoText {
+            float: left;
+        }
+
+            .logoText span {
+                float: left;
+            }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+            a:visited {
+                color: none;
+            }
+    </style>
+</head>
+<body style="font-size: 14px; padding-bottom: 2em; max-width: 30em; margin: 0 auto 1em; ">
+    <div class="logoText" style="width: 100%;border: 1px solid;background: #ff552e;color: #fff;">
+        <link href='https://www.hanyi.studio/WebFonts/C3DB971E-443B-4D37-887D-530EE441EB6B/201712/css/AD34CF1E2BACC757.css' rel='stylesheet' type='text/css' />
+        <a href="/home/index"> <span style="font-size: 3em; color: #fff;" class="cssAD34CF1E2BACC757">邻家游</span></a>
+        <span style="float:right; margin-top: 1em; margin-right: 3.8em;  padding: 0.1em 0.2em;"><a href="/my/index">@phone</a></span>
+        @if(phone != "我的")
+        {
+            <span style=" float: right; margin-top: 1em; margin-right: -10.2em; padding: 0.1em 0.2em;"><a href="/my/logOut">退出</a></span>
+        }
+    </div>
+    @RenderBody()
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

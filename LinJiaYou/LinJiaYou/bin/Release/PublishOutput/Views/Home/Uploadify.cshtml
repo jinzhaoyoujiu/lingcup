@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Uploadify";
+}
+<h2>Uploadify</h2>
+<div>
+    <input type="file" id="file_upload" name="file_upload" />
+</div>
+@section scripts{
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/plug/uploadify/jquery.uploadify.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#file_upload").uploadify({
+                'swf': '/plug/uploadify/uploadify.swf',
+                'uploader': '/ashx/Handler1.ashx'
+            });
+        });
+    </script>
+    }

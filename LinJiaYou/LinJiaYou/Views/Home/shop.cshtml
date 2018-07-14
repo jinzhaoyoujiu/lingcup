@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "景点列表";
+}
+<link href="~/Content/Swiper-3.4.2/dist/css/swiper.min.css" rel="stylesheet" />
+<style>
+    .swiper-container {
+        background: #eee;
+        width: 100%;
+        height: 6em;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        width: 40%;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    /* 正在被点击的链接 */
+    a.read_more_btn:hover {
+        color: #de686d;
+    }
+
+    div#tourist_content p {
+        text-indent: 2em;
+    }
+</style>
+
+
+<div>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="~/Content/images/superMarket.jpg" style="width: 100%; max-height: 7em;" />
+            </div>
+            <div class="swiper-slide">
+                <img src="~/Content/images/supermarket3.jpg" style="width: 100%; max-height: 7em;" />
+            </div>
+            <div class="swiper-slide">
+                <img src="~/Content/images/superMarket4.jpg" style="width: 100%; max-height: 7em;" />
+            </div>
+        </div>
+    </div>
+</div>
+@*地图*@
+<div>
+
+</div>
+@*//介绍*@
+<div>
+    <div>
+        <span>田云超市</span>
+    </div>
+    <div>
+        <span style="width: 14px; height: 16px; float: left; background-position: 0 -234px; background-image: url(/Content/images/detail-general-info.png); background-repeat: no-repeat; "></span><span>：</span><span>无</span><br />
+        <span>面积：</span><span>无</span><br />
+        <span style=" width: 14px; height: 16px; float: left; background-position: 0 -183px; background-image: url(/Content/images/detail-general-info.png); background-repeat: no-repeat; "></span><span>：</span>
+        <span>唐山市遵化市023乡道东50米</span><br />
+        <span>开店时间：</span><span>2011-12-09</span>
+    </div>
+</div>
+<!--本店最新特价-->
+<div style="width:99%;margin:0.1em 0.1em;">
+    <div style="width: 90%; padding: 0.1em 0.1em; font-size: 114%; font-weight: bold;  border-left: 0.2rem solid #ff492d; ">
+        <a><span>本店最新特价</span></a>
+        <span @*style="margin-top: 10px; margin-left: 6px;"*@>
+            <canvas id="moreC" width="15" height="15">更多</canvas>
+        </span>
+    </div>
+    <div>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <ul type="none" style="margin-left: -36px;height:100%;">
+                        <li style="float: left; width:100%;height:70%;">
+                            <div style="width: 96%; padding: 1px; height: 100%; ">
+                                <img src="/Content/images/0a362339da1c90aaf382aa22c73b82e6.webp"
+                                     style="max-width:100%; max-height:100%; " />
+                            </div>
+                        </li>
+                        <li style="float: left; width: 100%; font-size: 10px; ">
+                            <div style="clear:both;">
+                                <span>伊利牛奶</span>
+                            </div>
+                        </li>
+                        <li style="float: left; width: 100%; color: #ff492d; font-size: 10px;">
+                            <div>
+                                <span>¥</span><span>18</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <br />
+                </div>
+                <div class="swiper-slide">
+                    <ul type="none" style="margin-left: -36px;height:100%;">
+                        <li style="float: left; width:100%;height:70%;">
+                            <div style="width: 96%; padding: 1px; height: 100%; ">
+                                <img src="/Content/images/0a362339da1c90aaf382aa22c73b82e6.webp"
+                                     style="max-width:100%; max-height:100%; " />
+                            </div>
+                        </li>
+                        <li style="float: left; width: 100%; font-size: 10px; ">
+                            <div style="clear:both;">
+                                <span>伊利牛奶</span>
+                            </div>
+                        </li>
+                        <li style="float: left; width: 100%; color: #ff492d; font-size: 10px;">
+                            <div>
+                                <span>¥</span><span>18</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <br />
+                </div>
+                <div class="swiper-slide">
+                    <ul type="none" style="margin-left: -36px;height:100%;">
+                        <li style="float: left; width:100%;height:70%;">
+                            <div style="width: 96%; padding: 1px; height: 100%; ">
+                                <img src="/Content/images/0a362339da1c90aaf382aa22c73b82e6.webp"
+                                     style="max-width:100%; max-height:100%; " />
+                            </div>
+                        </li>
+                        <li style="float: left; width: 100%; font-size: 10px; ">
+                            <div style="clear:both;">
+                                <span>伊利牛奶</span>
+                            </div>
+                        </li>
+                        <li style="float: left; width: 100%; color: #ff492d; font-size: 10px;">
+                            <div>
+                                <span>¥</span><span>18</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <!-- Swiper JS -->
+<script src="~/Content/Swiper-3.4.2/dist/js/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        spaceBetween: 5
+    });
+    var showMore = function () {
+        $("div#read_all_box").hide();
+        $("div#tourist_content").css("height", "auto");
+    };
+    $(document).ready(function () {
+        $("a.read_more_btn").bind('click', showMore);
+    });
+</script>

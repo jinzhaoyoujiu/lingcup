@@ -1,0 +1,99 @@
+﻿@model IEnumerable<LinJiaYou.Models.Essay>
+@using System.Text.RegularExpressions;
+@{
+    ViewBag.Title = "头条";
+    int  j= 0;
+}
+<style type="text/css">
+    .essayItemPicGroup{
+        width:100%;
+    }
+    .essayItemPicGroup img{
+        width: 23%;
+    }
+    .essay-Item-Author {
+        display: inline-block;
+        float: left;
+        max-width: 15em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 1em;
+        margin: 0.2em 0.6em 0.9em auto;
+        font-size: 0.8em;
+        color: #AAA;
+    }
+</style>
+<div style="width:99%;margin:0.1em 0.1em;">
+    <div>
+        <ul type="none" style="margin:0;padding:0;">
+            @foreach (var item in Model)
+            {
+                j++;
+                <li style="float: left; clear: both; width: 100%; ">
+                    <a href="/essays/Details?id=@item.ID">
+                        <div style=" width: 92%; padding: 0.1em 0.1em; margin: 0.1em 1em; ">
+                            <h2 style="font-weight: normal;">
+                                <span>@item.Title</span>
+                            </h2>
+                            @{
+        string content = item.Content;
+        Regex a = new Regex(@"<p id=""a""[^<]*</p>", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+        string brief = "";
+        string[] srcs = new string[] { };
+        foreach (Match m in a.Matches(content))
+        {
+            if (brief != "")
+            {
+                break;
+            }
+            else
+            {
+                brief = m.Value;
+                Regex c = new Regex(@"<p id=""a""[^>]*>", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                foreach (Match t in c.Matches(brief))
+                {
+                    brief = brief.Replace(t.Value, "");
+                }
+                brief.Replace("</p>", "");
+            }
+        }
+                            }
+                            <p style="line-height: 1.4em; height: 2.8em; word-break: break-all; overflow: hidden; margin: 0;">@Html.Raw(brief)</p>
+                            <div class="essayItemPicGroup">
+                                @{
+            Regex b = new Regex(@"<img[^>]*\s*src=""http://op61of9x2.bkt.clouddn.com/[^>]*/>", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            MatchCollection mc = b.Matches(content);
+            string url = "";
+            for (int i = 0; i < mc.Count && i < 4; i++)
+            {
+                Regex r = new Regex(@"src=""http://op61of9x2.bkt.clouddn.com/[^""]*""", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                foreach (Match d in r.Matches(mc[i].Value))
+                {
+                    url = d.Value.Replace("src=\"", "").Replace("\"", "");
+                }
+                        <img src="@url" />
+}
+                                }
+                            </div>
+                            <div class="essay-Item-Author">
+                                <span>@item.Tourist.Name</span>
+                            </div>
+                            @if (j > 1)
+    {
+
+                        <hr style="clear: both; margin-top: 0.5em; margin-bottom: 0.5em;" />
+}
+                        </div>
+                    </a>
+                </li>
+                                }
+
+            <li>
+                <div style="clear:both;"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+
