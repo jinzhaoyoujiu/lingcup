@@ -1,2 +1,0 @@
-E:\LinJiaYou_MVC\LinJiaYou_Mvc\LinJiaYou\LinJiaYou.Tests\obj\Debug\LinJiaYou.Tests.csprojResolveAssemblyReference.cache
-E:\LinJiaYou_MVC\LinJiaYou_Mvc\LinJiaYou\LinJiaYou.Tests\obj\Debug\LinJiaYou.Tests.csproj.CoreCompileInputs.cache

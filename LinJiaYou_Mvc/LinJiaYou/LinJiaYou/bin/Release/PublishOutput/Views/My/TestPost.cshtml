@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "TestPost";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>TestPost</h2>
+@using (Html.BeginForm("TestPost", "My", FormMethod.Post))
+{
+    @Html.TextBox("url", "http://localhost:6949/home/GetTheResponse")<br />
+    @Html.TextBox("postData", "1");
+    <input type="submit" value="tijiao"  />
+}
+

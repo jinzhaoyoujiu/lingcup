@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "头条"; Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-with,initial-scale=1.0" />
+    <title>邻家游</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .logoText {
+            float: left;
+        }
+
+            .logoText span {
+                float: left;
+            }
+
+            .logoText a {
+                float: left;
+            }
+    </style>
+</head>
+<body style="padding-top: 0.2em; padding-bottom: 2em;">
+    <div class="logoText">
+        <link href='https://www.hanyi.studio/WebFonts/C3DB971E-443B-4D37-887D-530EE441EB6B/201712/css/AD34CF1E2BACC757.css' rel='stylesheet' type='text/css' />
+        <a href="/home/index"> <span style="font-size: 3em;" class="cssAD34CF1E2BACC757">邻家游</span></a>
+        <span style="margin-top: 1em; margin-left: 0.8em;  padding: 0.1em 0.2em;">遵化市娘娘庄乡下峪村</span>
+        <span style="margin-top: 1.2em; margin-left: 0.5em;display:none;">
+            <canvas id="moreC" width="15" height="15">更多</canvas>
+        </span>
+        <script>
+            var moreC = document.getElementById('moreC');
+            var moreCT = moreC.getContext('2d');
+            moreCT.moveTo(0, 0);
+            moreCT.lineTo(15, 0);
+            moreCT.lineTo(7.5, 12.9);
+            moreCT.fillStyle = "green";
+            moreCT.fill();
+        </script>
+        @*<span style="margin-top: 10px; margin-left: 6px;">
+                <canvas id="moreC" width="15" height="15">更多</canvas>
+            </span>*@
+    </div>
+    <br /><br /><br /><br />
+    <div style="width:99%;margin:0.1em 0.1em;">
+        <div>
+            <ul type="none" style="margin:0;padding:0;">
+                <li style="float: left; clear: both; width: 100%; ">
+                    <div style=" width: 92%; padding: 0.1em 0.1em; margin: 0.1em 1em; ">
+                        <span>本村将在12月14日召开村长选举大会</span>
+                        <br />
+                        &nbsp;<span>2017-12-10 12:12:00</span>
+                        <p style="line-height: 1.4em; height: 2.8em; word-break: break-all; overflow: hidden; margin: 0;">本村三年一度的村长选举大会...</p>
+                        <hr style="clear: both; margin-top: 0.5em; margin-bottom: 0.5em;" />
+                    </div>
+                </li>
+                <li style="float: left; clear: both; width: 100%; ">
+                    <div style=" width: 92%; padding: 0.1em 0.1em; margin: 0.1em 1em; ">
+                        <span>本村的自来水从12月24日起免费使用</span>
+                        <br />
+                        &nbsp;<span>2017-12-20 12:12:00</span>
+                        <p style="line-height: 1.4em; height: 2.8em; word-break: break-all; overflow: hidden; margin: 0;">本村的自来水从来都是各户自己付费的,为了...</p>
+                        <hr style="clear: both; margin-top: 0.5em; margin-bottom: 0.5em;" />
+                    </div>
+                </li>
+                <li style="float: left; clear: both; width: 100%; ">
+                    <div style=" width: 92%; padding: 0.1em 0.1em; margin: 0.1em 1em; ">
+                        <span>本村的班车从明天起将免费乘坐三天</span>
+                        <br />
+                        &nbsp;<span>2017-12-24 12:12:00</span>
+                        <p style="line-height: 1.4em; height: 2.8em; word-break: break-all; overflow: hidden; margin: 0;">本村班车从明天起将免费乘坐三天，期间...</p>
+                        <hr style="clear: both; margin-top: 0.5em; margin-bottom: 0.5em;" />
+                    </div>
+                </li>
+                <li>
+                    <div style="clear:both;"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <footer class="footer" style="text-align: center;margin-top:3em;">
+        <address style="margin-bottom:0px;">
+            <strong>Email:</strong>  <a href="mailto:wangbaolongcom@163.com">wangbaolongcom@163.com</a><br />
+            <strong>QQ:</strong>  <span>552742161</span>
+            <strong>Moblie:</strong>  <span>15832578508</span>
+        </address>
+        <p><span>&copy; @DateTime.Now.Year 邻家游</span>&nbsp;<a href="http://www.miitbeian.gov.cn/">冀ICP备17029777号</a></p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/underscore")
+    <script src="~/Scripts/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>
+

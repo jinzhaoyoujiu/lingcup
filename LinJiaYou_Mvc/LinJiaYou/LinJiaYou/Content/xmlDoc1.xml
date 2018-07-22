@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fruit>
+  <apple color="yellow" size="small" weight="1kg">
+    <brand>ysl</brand>
+  </apple>
+  <banana color="grey">
+    <size>big</size>
+  </banana>
+</fruit>
