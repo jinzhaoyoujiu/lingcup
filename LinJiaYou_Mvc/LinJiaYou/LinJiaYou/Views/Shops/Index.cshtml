@@ -1,0 +1,65 @@
+﻿@model IEnumerable<LinJiaYou.Models.Shop>
+<style>
+    .shop_list_profile {
+        /*border: 1px solid red;*/
+        margin-top: 20px;
+    }
+    .shop_list_profile ul{
+        list-style:none;
+    }
+</style>
+<div style="width: 100%; padding-bottom: 1em; margin: 0.1em 0.1em;margin-top:-1em; ">
+    <ul type="none">
+        @foreach (var item in Model)
+        {
+            <li>
+                <div style="float: left; width: 109%;margin-left:-2.4em;">
+                    <div style="float: left; width: 40%; padding: 0.1em 0.2em;">
+                        @{
+                            string avatar = "~/Content/images/shopNone.jpg";
+                            string url= item.Pictures.FirstOrDefault(c => c.Is_Cover == true).QiNiuPicture.Url;
+                            if (!string.IsNullOrWhiteSpace(url))
+                            {
+                                avatar = url;
+                            }
+                        }
+                        <img src="@avatar" style="width:100%;" />
+                    </div>
+                    <div style="float: left; width: 58%;">
+                        <div style="margin-top:10px;">
+                            <span>@Html.DisplayFor(modelItem => item.Name)</span>
+                        </div>
+                        @*<div>
+                            <span style="width: 14px; height: 16px; float: left; background-position: 0 -234px; background-image: url(/Content/images/detail-general-info.png); background-repeat: no-repeat; "></span><span>：</span><span>@Html.DisplayFor(modelItem => item.Phone)</span><br />
+                            <span>面积：</span><span>@Html.DisplayFor(modelItem=>item.Area)</span><br />
+                            <a href="Details?id=@item.ID">
+                                <span style=" width: 14px; height: 16px; float: left; background-position: 0 -183px; background-image: url(/Content/images/detail-general-info.png); background-repeat: no-repeat; "></span><span>：</span>
+                                <span>@Html.DisplayFor(modelItem => item.Address)</span>
+                            </a>
+                        </div>*@
+                        <div class="shop_list_profile">
+                            <ul>
+                                <li>
+                                    <a href="Details?id=@item.ID">
+                                        <div style="margin-left:-2.4em;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="50" height="50">
+                                                <rect width="50" height="50" style="fill:rgb(0,0,225);" />
+                                                <line x1="0" y1="45" x2="50" y2="12" style="stroke:rgb(0,225,225);stroke-width:11" />
+                                                <line x1="14" y1="0" x2="38" y2="40" style="stroke:rgb(0,225,225);stroke-width:6" />
+                                                <circle cx="15" cy="20" r="5" fill="red"></circle>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear: both;  border: 0.1em solid white; width: 109%;  margin-left: -2.4em; ">
+                    <hr style="clear:both;" />
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+<br />

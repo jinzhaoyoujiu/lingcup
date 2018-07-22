@@ -1,0 +1,8 @@
+﻿
+<div>
+    <p>
+        @ViewBag.ex1 
+        <br/>
+        @ViewBag.ex2
+    </p>
+</div>
