@@ -11,124 +11,75 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>@Fun.GetViewTitleName(new Shop())</h4>
-        <hr />
-        @Html.HiddenFor(model => model.Position)
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
+<div class="form-horizontal">
+    <h4>@Fun.GetViewTitleName(new Shop())</h4>
+    <hr />
+    @Html.HiddenFor(model => model.Position)
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
         </div>
-        <div class="form-group">
-            @Html.Label("图片", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div style="float: left;">
-                    @foreach (QiNiuPicture item in (ViewBag.QiNiuPictures as List<QiNiuPicture>))
-                    {
-                        i++;
-                        <div style=" width:210px;float: left;">
-                            <label for="pic"><img src="@item.Url" style="width:200px;height:120px;" /></label>
-                            <div style="width:20px;height:20px;float:left;margin-left:10px;">
-                                <input type="checkbox" name="pic" id="pic@(i)" style="width:100%;height:100%;" />
-                            </div>
-                            <div style="float:right;margin-right:20px;">
-                                <div style="width:20px;height:20px;float:left; margin-right: 6px;">
-                                    <input type="radio" name="Avatar" style="width:100%;height:100%;" />
-                                </div>
-                                <label for="Avatar" style="font-size: 20px;">封面</label>
-                            </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("图片", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div style="float: left;">
+                @foreach (QiNiuPicture item in (ViewBag.QiNiuPictures as List<QiNiuPicture>))
+                {
+                    i++;
+                    <div style=" width:210px;float: left;">
+                        <label for="pic"><img src="@item.Url" style="width:200px;height:120px;" /></label>
+                        <div style="width:20px;height:20px;float:left;margin-left:10px;">
+                            <input type="checkbox" name="pic" id="pic@(i)" style="width:100%;height:100%;" />
                         </div>
-                    }
-                </div>
-            </div>
-        </div>
-        <style>
-            .logo {
-                width: 100%;
-                height: 300px;
-                background: url(/Content/svg/xiayu.svg);
-                background-size: 100% 100%;
-                border: 1px solid;
-                background-repeat: no-repeat;
-                margin-top: 30px;
-                clear: both;
-            }
-
-            .shopPosition {
-                margin-left: 250px;
-                margin-top: 70px;
-            }
-        </style>
-        <br />
-        <div style="clear:both;">
-            <button onclick="clearPanel(event);">擦除</button>
-        </div>
-        <div class="logo" onclick="clickPanel(event);" id="panel">
-            <canvas id="one" width="300" height="300">
-                your browser does not support the canvas element.
-            </canvas>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                        <div style="float:right;margin-right:20px;">
+                            <div style="width:20px;height:20px;float:left; margin-right: 6px;">
+                                <input type="radio" name="Avatar" style="width:100%;height:100%;" />
+                            </div>
+                            <label for="Avatar" style="font-size: 20px;">封面</label>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
+    <br />
+    @{Html.RenderAction("ShowPosition", new { shop = new Shop() });}
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-@section scripts{
-    <script>
-        function clickPanel(event) {
-            var e = event || window.event;
-            var panel = document.getElementById('panel');
-            var left = e.pageX - panel.offsetLeft;
-            var top = e.pageY - panel.offsetTop;
-            var c = document.getElementById("one");
-            var cxt = c.getContext("2d");
-            cxt.fillStyle = "#ff0000";
-            cxt.beginPath();
-            cxt.arc(left, top, 10, 0, Math.PI * 2, false);
-            cxt.closePath();
-            cxt.fill();
-            document.getElementById("Position").value = "l:" + left + ";t:" + top;
-        }
-        function clearPanel(event) {
-            var e = event || window.event;
-            e.preventDefault();
-            var c = document.getElementById("one");
-            var cxt = c.getContext("2d");
-            cxt.clearRect(0, 0, 300, 300);
-        }
-    </script>
-}

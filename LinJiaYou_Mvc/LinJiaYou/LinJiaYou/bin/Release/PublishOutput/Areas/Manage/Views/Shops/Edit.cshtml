@@ -47,31 +47,7 @@
                 @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
             </div>
         </div>
-        <style>
-            .logo {
-                width: 100%;
-                height: 300px;
-                background: url(/Content/svg/xiayu.svg);
-                background-size: 100% 100%;
-                border: 1px solid;
-                background-repeat: no-repeat;
-                margin-top: 30px;
-                clear: both;
-            }
-
-            .shopPosition {
-                margin-left: 250px;
-                margin-top: 70px;
-            }
-        </style>
-        <div>
-            <button onclick="clearPanel(event);">擦除</button>
-        </div>
-        <div class="logo" onclick="clickPanel(event);" id="panel">
-            <canvas id="one" width="300" height="300">
-                your browser does not support the canvas element.
-            </canvas>
-        </div>
+        @{Html.RenderAction("ShowPosition", new { shop = Model });}
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
@@ -83,43 +59,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-@section scripts{
-<script type="text/javascript">
-        $(document).ready(function () {
-             if (document.getElementById("Position").value.length > 0) {
-                var p ='@Model.Position';
-                var left =Number('@(Model.Position!=null?Model.Position.Split(';')[0].Split(':')[1]:"0")');
-                var top =Number('@(Model.Position!=null?Model.Position.Split(';')[1].Split(':')[1]:"0")');
-                showPosition(left, top);
-            }
-        });
-        function clickPanel(event) {
-            var e = event || window.event;
-            var panel = document.getElementById('panel');
-            var left = e.pageX - panel.offsetLeft;
-            var top = e.pageY - panel.offsetTop;
-            showPosition(left, top);
-            document.getElementById("Position").value = "l:" + left + ";t:" + top;
-        }
-        function clearPanel(event) {
-            var e = event || window.event;
-            e.preventDefault();
-            var c = document.getElementById("one");
-            var cxt = c.getContext("2d");
-            cxt.clearRect(0, 0, 300, 300);
-        }
-        function showPosition(left,top)
-        {
-
-            var c = document.getElementById("one");
-            var cxt = c.getContext("2d");
-            cxt.fillStyle = "#ff0000";
-            cxt.beginPath();
-            cxt.arc(left, top, 10, 0, Math.PI * 2, false);
-            cxt.closePath();
-            cxt.fill();
-
-        }
-</script>
-
-}
