@@ -1,0 +1,268 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutWChatTest.cshtml";
+}
+
+<br /><br /><br />
+<style type="text/css">
+    .accountList {
+        padding: 14px 12px;
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+        .accountList button {
+            background-color: white;
+            width: 32%;
+            height: 150px;
+            font-size: -webkit-xxx-large;
+            color: cornflowerblue;
+            border-radius: 16px;
+            border: 3px solid cornflowerblue;
+            margin-left: 2px;
+            margin-top: 5px;
+            margin-right:5px;
+        }
+
+    .partTitle {
+        text-align:center;
+    }
+
+    input.pay {
+        width: 65%;
+        font-size: 80px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+    #total_fee {
+        font-weight: bolder;
+    }
+
+    .fee {
+        margin-top: 30px;
+        font-size: -webkit-xxx-large;
+        width: 100%;
+        clear: both;
+        text-align:center;
+    }
+    #phoneList{
+        font-size:60px;
+        list-style:none;
+    }
+    #phoneList  li{
+        margin-bottom:12px;
+    }
+</style>
+<div class="partTitle">
+    <input type="number" class="pay" id="phoneNum" placeholder="请输入手机号码" onfocus="showRecord();"  oninput="showShop();" />
+</div>
+<div class="partTitle">
+    <ul id="phoneList" style="display:none;"></ul>
+</div>
+<div class="fee" id="feeContainer" style="display:none;" >
+    <input type="number" class="pay" id="total_fee" placeholder="请输入充值金额"  />
+    <span>元</span>
+</div>
+<div class="accountList" id="shopList">
+</div>
+<br /><br /><br />
+
+<script>
+    function showShop() {
+        var phone = $.trim(document.getElementById("phoneNum").value);
+        var phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
+        var buttonDiv = document.getElementById('shopList');
+        if (phone.length === 11 && phoneReg.test(phone)) {
+            $.ajax({
+                url: "GetDevices",
+                async: false,
+                data: "&userPhone=" + phone,
+                dataType: "json",
+                error: function (ex) {
+                },
+                success: function (data) {
+                    if (data != null && data.Status === 1) {
+                        buttonDiv.innerHTML = "";
+                        JSON.parse(data.Data).forEach((element) => {
+                            var b = document.createElement('button');
+                            var text = document.createTextNode(element.ShopName);
+                            b.appendChild(text);
+                            b.onclick = function () { callPayStart(element.UUID); };
+                            buttonDiv.appendChild(b);
+                        });
+                        if (buttonDiv.innerHTML != "") {
+                            document.getElementById('feeContainer').style.display = '';
+                        }
+                    }
+                },
+                type: "POST"
+            });
+        }
+        else if (phone.length < 11) {
+            buttonDiv.innerHTML = "";
+            var ul = document.getElementById("phoneList");
+            var showOne = false;
+            ul.childNodes.forEach(item => {
+                var r = checkShow(phone, item.childNodes[0].nodeValue);
+                if (r) {
+                    item.style.display = "";
+                    showOne = true;
+                }
+                else {
+                    item.style.display = "none";
+                }
+            });
+            if (showOne) {
+                ul.style.display = "";
+            }
+            else {
+                ul.style.display = "none";
+            }
+        }
+    }
+    function checkFee() {
+        var fee = document.getElementById('total_fee').value;
+        if (Number(fee) >= 10000 || Number(fee)<0.01 ) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function callPayStart(UUID) {
+        var r = checkFee();
+        if (!r) {
+            alert('充值金额不能超过 10000 元,不能少于 0.01 元');
+            return false;
+        }
+        var total_fee = document.getElementById('total_fee').value;
+        var phoneNumber = document.getElementById("phoneNum").value;
+        $.ajax({
+            url: "CallPay",
+            async: true,
+            data: "&total_fee=" + total_fee + "&phoneNumber=" + phoneNumber + "&UUID=" + UUID,
+            dataType: "json",
+            error: function (ex) {
+            },
+            success: function (data) {
+                if (data != null && data.Status === 1) {
+                    jsApiCall(JSON.parse(data.Data));
+                }
+            },
+            type: "POST"
+        });
+    }
+    function jsApiCall(wxJsApiParam) {
+        WeixinJSBridge.invoke(
+            'getBrandWCPayRequest',
+            wxJsApiParam,
+            function (res) {
+                WeixinJSBridge.log(res.err_msg);
+                if (res.err_msg == "get_brand_wcpay_request:ok") {
+                    var phoneNumber = document.getElementById("phoneNum").value;
+                    var cookiePhone = getCookie("recordPhone");
+                    if (cookiePhone.length > 0) {
+                        var phoneArray = cookiePhone.split("&");
+                        if (phoneArray.length > 0) {
+                            if (phoneArray.indexOf(phoneNumber) < 0) {
+                                cookiePhone += "&" + phoneNumber;
+                            }
+                        }
+                    }
+                    else {
+                        cookiePhone = phoneNumber;
+                    }
+                    setCookie("recordPhone", cookiePhone,1000);
+                }     
+            }
+        );
+    }
+    function callpay() {
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+            }
+            else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+            }
+        }
+        else {
+            jsApiCall();
+        }
+    }
+    function showRecord() {
+        var ul = document.getElementById("phoneList");
+        if (ul.childElementCount != getPhonesCount()) {
+            var cookie = getCookie("recordPhone");
+            if (cookie.length > 0) {
+                var aArray = cookie.split("&");
+                aArray.forEach(element => {
+                    var li = document.createElement("li");
+                    var liText = document.createTextNode(element);
+                    li.appendChild(liText);
+                    li.onclick = function () { showPhone(element); };
+                    ul.appendChild(li);
+                });
+                ul.style.borderBottom = "1px solid black";
+            }
+        }
+        ul.style.display = "";
+    }
+    function setCookie(name, value, expiredays) {
+        var edate = new Date();
+        edate.setDate(edate.getDate() + expiredays);
+        document.cookie = name + "=" + value + ((expiredays == null) ? "" :";expires="+ edate.toGMTString());
+    }
+    function clearCookie(name) {
+        setCookie(name, "", -1);
+    }
+    function checkCookie() {
+
+    }
+    function getCookie(name) {
+        if (document.cookie.length > 0) {
+            var start = document.cookie.indexOf(name + "=");
+            if (start > -1) {
+                start = start + name.length + 1;
+                var end = document.cookie.indexOf(";", start);
+                if (end <= -1) {
+                    end = document.cookie.length;
+                }
+                return document.cookie.substring(start, end);
+            }
+        }
+        return "";
+        }
+    function showPhone(phone) {
+        if (phone.length > 0) {
+            document.getElementById("phoneNum").value = phone;
+            document.getElementById('feeContainer').style.display = '';
+            showShop();
+            document.getElementById('phoneList').style.display = 'none';
+        }
+    }
+    function getPhonesCount() {
+        var length = 0;
+        var cookie = getCookie("recordPhone");
+        if (cookie.length > 0) {
+            var aArray = cookie.split("&");
+            length = aArray.length;
+        }
+        return length;
+    }
+    function checkShow(checkVal, phone) {
+        var result = false;
+        var l = checkVal.length;
+        if (phone.length >= l) {
+            var v = phone.substring(0, l);
+            if (v === checkVal) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
+</script>

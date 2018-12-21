@@ -145,3 +145,4 @@ E:\LinJiaYou_MVC\LinJiaYou_Mvc\LinJiaYou\LinJiaYou\bin\MySql.Data.Entity.EF6.xml
 E:\LinJiaYou_MVC\LinJiaYou_Mvc\LinJiaYou\LinJiaYou\bin\System.Net.Http.Extensions.xml
 E:\LinJiaYou_MVC\LinJiaYou_Mvc\LinJiaYou\LinJiaYou\bin\System.Net.Http.Primitives.xml
 E:\LinJiaYou_MVC\LinJiaYou_Mvc\LinJiaYou\LinJiaYou\obj\Release\LinJiaYou.Migrations.addaP.resources
+E:\LinJiaYou_MVC\LinJiaYou_Mvc\LinJiaYou\LinJiaYou\bin\LitJSON.dll

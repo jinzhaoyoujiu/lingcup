@@ -229,7 +229,7 @@
       <publishTime>11/25/2013 10:32:32</publishTime>
     </File>
     <File Include="bin/en-US/LinJiaYou.resources.dll">
-      <publishTime>07/22/2018 08:58:16</publishTime>
+      <publishTime>12/19/2018 19:04:27</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/03/2018 17:33:39</publishTime>
@@ -241,10 +241,10 @@
       <publishTime>12/21/2017 20:23:44</publishTime>
     </File>
     <File Include="bin/LinJiaYou.dll">
-      <publishTime>07/22/2018 08:58:15</publishTime>
+      <publishTime>12/19/2018 19:04:26</publishTime>
     </File>
     <File Include="bin/LinJiaYou.pdb">
-      <publishTime>07/22/2018 08:58:15</publishTime>
+      <publishTime>12/19/2018 19:04:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>03/03/2018 19:11:01</publishTime>
@@ -598,7 +598,7 @@
       <publishTime>07/14/2018 09:52:30</publishTime>
     </File>
     <File Include="Content/svg/xiayu.svg">
-      <publishTime>07/24/2018 22:35:20</publishTime>
+      <publishTime>07/24/2018 23:35:25</publishTime>
     </File>
     <File Include="Content/Swiper-3.4.2/.editorconfig">
       <publishTime>01/28/2018 22:04:56</publishTime>
@@ -1747,7 +1747,7 @@
       <publishTime>05/20/2018 08:42:34</publishTime>
     </File>
     <File Include="Views/Essays/Index.cshtml">
-      <publishTime>05/20/2018 18:39:14</publishTime>
+      <publishTime>12/19/2018 19:03:04</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>01/28/2018 22:05:00</publishTime>
@@ -1774,7 +1774,7 @@
       <publishTime>03/24/2018 20:24:27</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>05/20/2018 18:34:12</publishTime>
+      <publishTime>12/19/2018 19:04:16</publishTime>
     </File>
     <File Include="Views/Home/jobList.cshtml">
       <publishTime>01/28/2018 22:05:00</publishTime>
@@ -1858,7 +1858,7 @@
       <publishTime>05/12/2018 19:38:02</publishTime>
     </File>
     <File Include="Views/Shops/Index.cshtml">
-      <publishTime>07/22/2018 22:20:43</publishTime>
+      <publishTime>07/24/2018 23:33:35</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>03/03/2018 15:34:20</publishTime>

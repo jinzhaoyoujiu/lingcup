@@ -63,12 +63,12 @@
                             <p style="line-height: 1.4em; height: 2.8em; word-break: break-all; overflow: hidden; margin: 0;">@Html.Raw(brief)</p>
                             <div class="essayItemPicGroup">
                                 @{
-            Regex b = new Regex(@"<img[^>]*\s*src=""http://op61of9x2.bkt.clouddn.com/[^>]*/>", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Regex b = new Regex(@"<img[^>]*\s*src=""http://image.lingcup.com/[^>]*/>", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             MatchCollection mc = b.Matches(content);
             string url = "";
             for (int i = 0; i < mc.Count && i < 4; i++)
             {
-                Regex r = new Regex(@"src=""http://op61of9x2.bkt.clouddn.com/[^""]*""", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                Regex r = new Regex(@"src=""http://image.lingcup.com/[^""]*""", RegexOptions.Compiled | RegexOptions.IgnoreCase);
                 foreach (Match d in r.Matches(mc[i].Value))
                 {
                     url = d.Value.Replace("src=\"", "").Replace("\"", "");
