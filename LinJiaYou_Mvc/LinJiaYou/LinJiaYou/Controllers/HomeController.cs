@@ -6,7 +6,7 @@ using System.Data;
 using LinJiaYou.Models;
 using LinJiaYou.App_Start;
 using System.Data.Entity;
-using LinJiaYou.Collections;
+
 
 namespace LinJiaYou.Controllers
 {
@@ -20,11 +20,7 @@ namespace LinJiaYou.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            Shops shops = new Shops();
-            shops.Add(new Shop { });
-            Shop s = shops[0];
             ViewBag.essays = db.Essays.ToList();
-
             return View();
         }
         public ActionResult About()

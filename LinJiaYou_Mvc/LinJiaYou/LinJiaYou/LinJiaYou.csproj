@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LinJiaYou</RootNamespace>
     <AssemblyName>LinJiaYou</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -272,7 +272,6 @@
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
     <Compile Include="business\JsApiPay.cs" />
     <Compile Include="business\ResultNotify.cs" />
-    <Compile Include="Collections\Shops.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EssaysController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -285,7 +284,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\Fun.cs" />
-    <Compile Include="Helper\JsonHelper.cs" />
     <Compile Include="Helper\MySQLHelper.cs" />
     <Compile Include="lib\Config.cs" />
     <Compile Include="lib\Data.cs" />
@@ -302,7 +300,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Class1.cs" />
-    <Compile Include="Models\Class2.cs" />
     <Compile Include="Models\County.cs" />
     <Compile Include="Models\Essay.cs" />
     <Compile Include="Models\ExceptionLog.cs" />
@@ -895,7 +892,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\WChatPay\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Manage\Models\" />

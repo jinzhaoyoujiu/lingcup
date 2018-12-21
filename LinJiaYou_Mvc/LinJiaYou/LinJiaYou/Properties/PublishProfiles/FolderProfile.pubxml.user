@@ -229,7 +229,7 @@
       <publishTime>11/25/2013 10:32:32</publishTime>
     </File>
     <File Include="bin/en-US/LinJiaYou.resources.dll">
-      <publishTime>12/19/2018 19:04:27</publishTime>
+      <publishTime>12/21/2018 14:28:30</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/03/2018 17:33:39</publishTime>
@@ -238,13 +238,16 @@
       <publishTime>03/03/2018 17:33:39</publishTime>
     </File>
     <File Include="bin/Google.Protobuf.dll">
-      <publishTime>12/21/2017 20:23:44</publishTime>
+      <publishTime>06/15/2018 17:15:26</publishTime>
     </File>
     <File Include="bin/LinJiaYou.dll">
-      <publishTime>12/19/2018 19:04:26</publishTime>
+      <publishTime>12/21/2018 14:28:30</publishTime>
     </File>
     <File Include="bin/LinJiaYou.pdb">
-      <publishTime>12/19/2018 19:04:26</publishTime>
+      <publishTime>12/21/2018 14:28:30</publishTime>
+    </File>
+    <File Include="bin/LitJSON.dll">
+      <publishTime>03/31/2016 19:47:32</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>03/03/2018 19:11:01</publishTime>
@@ -292,13 +295,13 @@
       <publishTime>11/25/2013 10:32:26</publishTime>
     </File>
     <File Include="bin/MySql.Data.dll">
-      <publishTime>03/23/2018 15:10:12</publishTime>
+      <publishTime>06/15/2018 17:15:30</publishTime>
     </File>
     <File Include="bin/MySql.Data.Entity.EF6.dll">
       <publishTime>04/24/2018 00:07:06</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>03/24/2018 17:44:14</publishTime>
+      <publishTime>06/15/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/Org.Mentalis.Security.Cryptography.dll">
       <publishTime>11/25/2013 10:32:26</publishTime>
@@ -410,6 +413,9 @@
     </File>
     <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
       <publishTime>05/10/2018 22:42:44</publishTime>
+    </File>
+    <File Include="cert/apiclient_cert.p12">
+      <publishTime>06/12/2018 16:08:18</publishTime>
     </File>
     <File Include="Content/1.jpg">
       <publishTime>01/28/2018 22:04:58</publishTime>
@@ -1539,8 +1545,44 @@
     <File Include="Global.asax">
       <publishTime>03/03/2018 15:34:20</publishTime>
     </File>
+    <File Include="logs/2018-06-12.log">
+      <publishTime>06/12/2018 18:13:19</publishTime>
+    </File>
+    <File Include="logs/2018-06-13.log">
+      <publishTime>06/13/2018 13:48:48</publishTime>
+    </File>
+    <File Include="logs/2018-06-20.log">
+      <publishTime>06/20/2018 19:27:00</publishTime>
+    </File>
+    <File Include="logs/2018-06-22.log">
+      <publishTime>06/22/2018 17:26:12</publishTime>
+    </File>
+    <File Include="Manage/Managers/Export/2018-07-16-17-19-33.xls">
+      <publishTime>07/16/2018 17:19:33</publishTime>
+    </File>
+    <File Include="Manage/Managers/Export/2018-07-16-17-23-19.xls">
+      <publishTime>07/16/2018 17:23:19</publishTime>
+    </File>
+    <File Include="Manage/Managers/Export/2018-07-16-17-23-38.xls">
+      <publishTime>07/16/2018 17:23:38</publishTime>
+    </File>
+    <File Include="Manage/Managers/Export/2018-07-16-17-31-09.xls">
+      <publishTime>07/16/2018 17:31:10</publishTime>
+    </File>
+    <File Include="Manage/Managers/Export/2018-07-16-17-41-14.xls">
+      <publishTime>07/16/2018 17:41:14</publishTime>
+    </File>
+    <File Include="Manage/Managers/Export/2018-07-16-17-41-19.xls">
+      <publishTime>07/16/2018 17:41:19</publishTime>
+    </File>
+    <File Include="Manage/Managers/Export/2018-07-16-17-45-21.xls">
+      <publishTime>07/16/2018 17:45:21</publishTime>
+    </File>
+    <File Include="Manage/Managers/Export/2018-07-16-17-45-33.xls">
+      <publishTime>07/16/2018 17:45:33</publishTime>
+    </File>
     <File Include="packages.config">
-      <publishTime>06/18/2018 15:56:46</publishTime>
+      <publishTime>12/21/2018 12:47:22</publishTime>
     </File>
     <File Include="Scripts/bootstrap.bundle.js">
       <publishTime>06/18/2018 14:54:22</publishTime>
@@ -1860,6 +1902,9 @@
     <File Include="Views/Shops/Index.cshtml">
       <publishTime>07/24/2018 23:33:35</publishTime>
     </File>
+    <File Include="Views/WChatPay/Index.cshtml">
+      <publishTime>06/25/2018 10:28:57</publishTime>
+    </File>
     <File Include="Views/Web.config">
       <publishTime>03/03/2018 15:34:20</publishTime>
     </File>
@@ -1867,7 +1912,7 @@
       <publishTime>03/03/2018 15:34:20</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/15/2018 21:42:50</publishTime>
+      <publishTime>12/21/2018 14:02:21</publishTime>
     </File>
   </ItemGroup>
 </Project>

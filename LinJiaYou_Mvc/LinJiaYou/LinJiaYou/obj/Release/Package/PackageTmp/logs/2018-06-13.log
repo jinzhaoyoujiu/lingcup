@@ -1,0 +1,15 @@
+2018-06-13 11:18:44.491 INFO WxPayAPI.ResultNotify: Receive data from WeChat : 
+2018-06-13 11:18:44.495 ERROR WxPayAPI.WxPayData: 将空的xml串转换为WxPayData不合法!
+2018-06-13 11:18:44.601 ERROR WxPayAPI.ResultNotify: Sign check error : <xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[将空的xml串转换为WxPayData不合法!]]></return_msg></xml>
+2018-06-13 11:18:44.605 INFO WxPayAPI.ResultNotify: Check sign success
+2018-06-13 11:18:44.614 ERROR WxPayAPI.ResultNotify: The Pay result is error : <xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[支付结果中微信订单号不存在]]></return_msg></xml>
+2018-06-13 11:20:56.542 INFO WxPayAPI.ResultNotify: Receive data from WeChat : 
+2018-06-13 11:20:56.603 ERROR WxPayAPI.WxPayData: 将空的xml串转换为WxPayData不合法!
+2018-06-13 11:20:56.798 ERROR WxPayAPI.ResultNotify: Sign check error : <xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[将空的xml串转换为WxPayData不合法!]]></return_msg></xml>
+2018-06-13 11:20:56.819 INFO WxPayAPI.ResultNotify: Check sign success
+2018-06-13 11:21:06.919 ERROR WxPayAPI.ResultNotify: The Pay result is error : <xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[支付结果中微信订单号不存在]]></return_msg></xml>
+2018-06-13 13:48:48.899 INFO WxPayAPI.ResultNotify: Receive data from WeChat : 
+2018-06-13 13:48:48.903 ERROR WxPayAPI.WxPayData: 将空的xml串转换为WxPayData不合法!
+2018-06-13 13:48:48.910 ERROR WxPayAPI.ResultNotify: Sign check error : <xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[将空的xml串转换为WxPayData不合法!]]></return_msg></xml>
+2018-06-13 13:48:48.915 INFO WxPayAPI.ResultNotify: Check sign success
+2018-06-13 13:48:48.918 ERROR WxPayAPI.ResultNotify: The Pay result is error : <xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[支付结果中微信订单号不存在]]></return_msg></xml>
