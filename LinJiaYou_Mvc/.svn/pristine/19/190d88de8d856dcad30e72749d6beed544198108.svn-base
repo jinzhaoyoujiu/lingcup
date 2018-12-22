@@ -1,0 +1,8 @@
+2018-06-12 15:09:59.368 INFO LinJiaYou.Controllers.WChatPayController: page load
+2018-06-12 15:10:02.350 DEBUG WxPayAPI.JsApiPay: Will Redirect to URL : https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2428e34e0e7dc6ef&redirect_uri=http%3a%2f%2flocalhost%2fWChatPay%2fIndex&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
+2018-06-12 15:10:02.394 ERROR WxPayAPI.WxPayData: WxPayData内部含有值为null的字段!
+2018-06-12 15:10:02.463 ERROR WxPayAPI.JsApiPay: WxPayAPI.WxPayException: WxPayData内部含有值为null的字段!
+   在 WxPayAPI.WxPayData.ToUrl() 位置 D:\projects\LinJiaYou_Mvc\LinJiaYou_Mvc\LinJiaYou\LinJiaYou\lib\Data.cs:行号 159
+   在 WxPayAPI.JsApiPay.GetEditAddressParameters() 位置 D:\projects\LinJiaYou_Mvc\LinJiaYou_Mvc\LinJiaYou\LinJiaYou\business\JsApiPay.cs:行号 241
+2018-06-12 18:13:19.403 INFO LinJiaYou.Controllers.WChatPayController: page load
+2018-06-12 18:13:19.407 ERROR LinJiaYou.Controllers.WChatPayController: This page have not get params, cannot be inited, exit...
