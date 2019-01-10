@@ -1,4 +1,5 @@
 ﻿@model LinJiaYou.Models.QiNiuPicture
+@using Microsoft.Security.Application
 
 @{
     ViewBag.Title = "Details";
@@ -36,7 +37,26 @@
 
     </dl>
 </div>
+<div>
+    <img src="http://localhost:8162/manage/managers/GetA" />
+    <h2 id="wwwe"></h2>
+    <h2 id="er"></h2>
+</div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+<script>
+    var s = "we,@Ajax.JavaScriptStringEncode(Model.Url)";
+    document.getElementById("wwwe").innerHTML = s;
+     var sw = "we,@Encoder.JavaScriptEncode(Model.Url)";
+    document.getElementById("er").innerHTML = sw;
+    getHostPostfix();
+    function getHostPostfix() {
+        var hostname = location.hostname;
+        hostname = 'home.cnblogs.com';
+        hostname = hostname.substring(hostname.lastIndexOf("."), hostname.length);
+        console.log(location.href);
+        //return hostname;
+    }
+</script>

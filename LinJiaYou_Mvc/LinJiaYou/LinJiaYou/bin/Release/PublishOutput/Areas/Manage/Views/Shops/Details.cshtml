@@ -1,10 +1,16 @@
-﻿@model LinJiaYou.Models.Shop
+﻿@inherits LinJiaYou.Pages.MyBasePage
+@*@model LinJiaYou.Models.Shop*@
 
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
+
+<p>@this.MessageService.Message
+    <br />
+    <img src="@this.MessageService.Url" />
+</p>
 
 <div>
     <h4>Shop</h4>
